@@ -1,0 +1,61 @@
+<body >
+<div class="container-fluid">
+    <div class="row">
+        <div class="col bg-dark text-white">
+            <a class="navbar-brand">Online Store</a>
+            <cart-summary class="float-right"></cart-summary>
+        </div>
+    </div>
+    <div class="row text-white">
+        <div class="col-3 bg-dark p-2">
+            <button class="btn btn-block btn-outline-light" (click)="changeCategory()">
+                HOME
+            </button>
+            <button *ngFor="let cat of categories" class="btn btn-outline-light btn-block"
+                [class.active]="cat==selectedCategory" (click)="changeCategory(cat)">
+                {{cat}}
+            </button>
+            <!--Admin Button -->
+            <button class="btn btn-block btn-danger m-t-3" routerLink="/admin">Admin</button>
+        </div>
+        <div class="col-9 bg-warning p-2">
+            <div *ngFor="let product of products" class="card m-1 p-1 bg-dark">
+                <h4>
+                    {{product.name}}
+                    <span class="badge badge-pill badge-danger float-right">
+                        {{product.price|currency:"ILS":"symbol":"2.2-2"}}
+                    </span>
+                </h4>
+                <div class="card-text bg-dark p-1">{{product.description}}
+                    <button class="btn btn-success btn-sm float-right mr-1"
+                    (click)="addProductToCart(product)">Add To Cart</button>
+                </div>
+            </div>
+            <div class="form-inline float-left mr-1 ">
+                <select class="form-control" [value]="productPerPage" (change)="changePageSize($any($event.target).value)">
+                        <option value="4" selected>4 Products Per Page</option>
+                        <option value="6">6 Products Per Page</option>
+                        <option value="8">8 Products Per Page</option>
+                </select>
+            </div>
+            <div class = "btn-group float-right">
+                <button *ngFor="let page of PageNumbers" (click)="changePage(page)"
+                    class="btn btn-outline-dark"
+                    [class.active]="page==selectedPage">
+                {{page}}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row text-white">
+        <div class="col-3 bg-dark p-2"></div>
+        
+
+    </div>
+
+
+    
+</div>
+
+
+</body>

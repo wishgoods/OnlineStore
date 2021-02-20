@@ -1,0 +1,16 @@
+<div class="floating-right">
+    <small>
+        Your Cart :
+        <span *ngIf="cart.itemcount>0">
+            {{cart.itemcount}}item(s)
+            {{cart.cartPrice| currency:"ILS":"symbol":"2.2-2"}}
+        </span>
+        <span *ngIf="cart.itemcount==0">
+            (empty)
+        </span>
+    </small>
+    <button class="btn btn-sm bg-dark text-white"
+    [disabled]="cart.itemcount==0">
+<i class="fa fa-shopping-cart" (click)="goToCart()"></i>
+    </button>
+</div>
