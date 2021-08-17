@@ -1,3 +1,30 @@
-body{
-    background-color: gray;
+app-cart-details {
+    position: fixed;
+    right: 0px;
+    width: 40vw;
+    height: fit-content;
+    background-color: aliceblue;
+    opacity: 92%;
+    border: 1px solid rgba(169, 169, 169, 0.452);
+    border-radius: 15px;
+    margin: 10px;
+    z-index: 10;
+}
+
+.btn_price {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.items_view {
+    background-image: linear-gradient(to-left, white, purple, yellow);
+}
+
+#grad {
+    background-image: radial-gradient(circle, white, purple, yellow);
+}
+
+.price_cart {
+    background-image: linear-gradient(to-left, white, purple, yellow);
 }

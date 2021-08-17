@@ -9,8 +9,26 @@
             (empty)
         </span>
     </small>
-    <button class="btn btn-sm bg-dark text-white"
+
+        <button class="btn btn-sm bg-dark text-white btn_cart"
     [disabled]="cart.itemcount==0">
-<i class="fa fa-shopping-cart" (click)="goToCart()"></i>
+<span>
+
+<i class="fa fa-shopping-cart "  (click)="goToCart()"></i>
+<i class="fas fa-certificate text-danger" *ngIf="cart.itemcount>0"></i>
+<i class="count_li text-white" *ngIf="cart.itemcount>0">{{cart.itemcount}}</i>
+
+</span>
     </button>
 </div>
+
+
+
+
+
+
+
+
+
+
+

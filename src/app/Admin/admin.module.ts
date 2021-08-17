@@ -46,7 +46,7 @@ let routing = RouterModule.forChild(
     imports: [CommonModule, FormsModule, routing],
     providers: [AuthGuard],
     declarations: [AuthComponent, AdminComponent,
-    ProducEditorComponent,productTableComponent,OrderTableComponent]
+        ProducEditorComponent, productTableComponent, OrderTableComponent]
 
 })
 export class AdminModule { }

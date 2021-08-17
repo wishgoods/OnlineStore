@@ -41,6 +41,7 @@ export class repository {
     }
 
     saveProduct(product: Product) {
+        debugger
         if (product.id == null || product.id == 0) {
             this.restsource.saveProduct(product).subscribe(p => this.products.push(p));
         }
